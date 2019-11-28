@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DAVI Blitzer Visualisierung</title>
+    <link rel="stylesheet" href="resources/purecss_1.0.1_min.css" />
+    <link rel="stylesheet" href="resources/purecss_v1_0_1_min_grid.css" />
+    <link rel="stylesheet" href="resources/custom.css" />
+</head>
+<body>
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">Wo sind die Verkehrsblitzer?</h1>
+            <p class="splash-subhead">
+                Finden sie es heraus!
+            </p>
+            <p>
+                <a href="#map" class="pure-button pure-button-primary">Map</a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="">DAVI Blitzer Visualisierung</a>
+    
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#map" class="pure-menu-link">Map</a></li>
+                <li class="pure-menu-item"><a href="#laendervergleich" class="pure-menu-link">Ländervergleich</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content" id="map">
+            <h2 class="content-head is-center">Map der Blitzer</h2>
+
+            <div class="pure-g">
+                <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <div id="mapbox"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content" id="laendervergleich">
+            <h2 class="content-head is-center">Ländervergleich</h2>
+
+            <div class="pure-g">
+                <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <div id="comparebox"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer l-box is-center">
+            &copy; 2019 Joel Grepper | Jan Bucher | Modul DAVI @ Hochschule Luzern
+        </div>
+    </div>
+
+    <script src="resources/d3.v4.js"></script>
+    <script src="resources/createMap.js"></script>
+    <script src="resources/createCompare.js"></script>
+   
+</body>
+</html>
