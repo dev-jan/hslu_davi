@@ -14,7 +14,7 @@ function createCompare() {
   .attr("height", height + margin.top + margin.bottom)
 .append("g")
   .attr("transform", 
-        "translate(" + margin.left + "," + margin.top + ")");
+        "translate(" + margin.left + "," + margin.top + ")")
   
     //Read the data
     d3.json("data/blitzerPerCountry.json", function(data) {
@@ -35,7 +35,17 @@ function createCompare() {
           .attr("x", function(d) { return x(d.name); })
           .attr("width", x.bandwidth())
           .attr("y", function(d) { return y(d.value); })
-          .attr("height", function(d) { return height - y(d.value); });
+          .attr("height", function(d) { return height - y(d.value); })
+          .on('mouseover', function (d, i) {
+            d3.select(this).transition()
+                  .duration('50')
+                  .attr('opacity', '.85');
+          })
+          .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                  .duration('50')
+                  .attr('opacity', '1')
+          })
 
       // add the x Axis
       svgCompare.append("g")

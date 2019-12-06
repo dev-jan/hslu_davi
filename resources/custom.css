@@ -290,22 +290,34 @@ a.pure-button-primary {
 }
 
 svg rect {
-    fill: #FFF;   /* map background colour */
-  }
-  .country{
-    fill: #d0d0d0;   /* country colour */
-    stroke: #2A2C39; /* country border colour */
-    stroke-width: 1; /* country border width */
-  }
-  .country-on{
-    fill: #4B5358;   /* highlight colour for selected country */
-  }
-  .countryLabel{
-    display: none;   /* hide all country labels by default */
-  }
-  .countryName{
-    fill: #FFFAFF;   /* country label text colour */
-  }
-  .countryLabelBg{
-    fill: #30BCED;   /* country label background colour */
-  }
+  fill: #FFF;   /* map background colour */
+}
+.country{
+  opacity: 0.5;   /* country colour */
+  stroke: #2A2C39; /* country border colour */
+  stroke-width: 1; /* country border width */
+}
+.country-on{
+  opacity: 0.9;   /* highlight colour for selected country */
+}
+.countryLabel{
+  display: none;   /* hide all country labels by default */
+}
+.countryName{
+  fill: #FFFAFF;   /* country label text colour */
+}
+.countryLabelBg{
+  fill: #30BCED;   /* country label background colour */
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 8px;
+  font: 11px sans-serif;
+  background: #ddd;
+  border: solid 1px #aaa;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 200;
+}
