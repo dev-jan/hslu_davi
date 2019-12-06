@@ -60,7 +60,7 @@ function createMap() {
     });
 
     const colorScale = d3.scaleLinear()
-                         .range(['red', 'white', 'green']);
+                         .range(['green', 'white', 'red']);
     var datadomain = d3.extent(theBlitzerData.map(function(x) { return x[field]; })),
         colors = d3.scaleQuantize()
                     .domain(datadomain)
