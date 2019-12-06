@@ -293,7 +293,7 @@ svg rect {
   fill: #FFF;   /* map background colour */
 }
 .country{
-  opacity: 0.5;   /* country colour */
+  opacity: 0.7;   /* country colour */
   stroke: #2A2C39; /* country border colour */
   stroke-width: 1; /* country border width */
 }

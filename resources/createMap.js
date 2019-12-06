@@ -59,10 +59,8 @@ function createMap() {
       return d[field] !== null;
     });
 
-    const colorScale = d3.scaleLinear()
-                         .range(['green', 'white', 'red']);
-    var datadomain = d3.extent(theBlitzerData.map(function(x) { return x[field]; })),
-        colors = d3.scaleQuantize()
+    var datadomain = d3.extent(theBlitzerData.map(function(x) { return x[field]; }));
+    var colors = d3.scaleQuantize()
                     .domain(datadomain)
                     .range(colorbrewer["RdYlGn"][9]);
 
