@@ -12,7 +12,7 @@ function createMap() {
 
   var projection = d3
     .geoEquirectangular()
-    .center([0, 15]) // set centre to further North
+    .center([120, 0]) // set centre to further North
     .scale([w/(2*Math.PI)]) // scale to fit group width
     .translate([w/2,h/2]) // ensure centred in group
 
