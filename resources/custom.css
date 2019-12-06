@@ -290,7 +290,7 @@ a.pure-button-primary {
 }
 
 svg rect {
-    fill: #2A2C39;   /* map background colour */
+    fill: #FFF;   /* map background colour */
   }
   .country{
     fill: #d0d0d0;   /* country colour */

@@ -29,6 +29,7 @@ function createMap() {
   }
   var zoom = d3
    .zoom()
+   .scaleExtent([0.5, 10])
    .on("zoom", zoomed)
 
   // append the svg object to the body of the page
