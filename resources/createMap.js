@@ -45,10 +45,14 @@ function createMap() {
     // add zoom functionality
     .call(zoom);
 
-  d3.json("data/blitzerPerCountry.json", function(data) {
-    theBlitzerData = data;
+  queue()
+    .defer(d3.json, "data/blitzerPerCountry.json")
+    .defer(d3.json, "data/world.geo.json")
+    .await(loaded);
+
+  function loaded(err, theBlitzerData, worldData) {
     field = "value";
-    data = data.map(function(d) {
+    theBlitzerData = theBlitzerData.map(function(d) {
       d[field] = (d[field] === undefined || isNaN(+d[field])) ? null : +d[field];
       return d;
     }).filter(function(d) {
@@ -57,7 +61,7 @@ function createMap() {
 
     const colorScale = d3.scaleLinear()
                          .range(['red', 'white', 'green']);
-    var datadomain = d3.extent(data.map(function(x) { return x[field]; })),
+    var datadomain = d3.extent(theBlitzerData.map(function(x) { return x[field]; })),
         colors = d3.scaleQuantize()
                     .domain(datadomain)
                     .range(colorbrewer["RdYlGn"][9]);
@@ -66,37 +70,8 @@ function createMap() {
                 .domain(datadomain)
                 .range([0, 240]);
 
-    var tf = ".0f",
-        tsign = "",
-        drange = datadomain[1] - datadomain[0];
-    if (datadomain[0] < 0) {
-        tsign = "+";
-    }
-    if (drange <= 2.0) {
-        tf = ".2f";
-    } else if (drange < 10.0) {
-        tf = ".1f";
-    }
 
-    var xAxis = d3.axisBottom(x)
-        .tickFormat(d3.format(tsign + tf));
-
-    var xbar = svg.append("g")
-                  .attr("transform", "translate(" + (width / 2 - 120) + "," + (height - 30) + ")")
-                  .attr("class", "key");
-
-    xbar.selectAll("rect")
-          .data(d3.pairs(x.ticks(10)))
-        .enter().append("rect")
-          .attr("height", 8)
-          .attr("x", function(d) { return x(d[0]); })
-          .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-          .style("fill", function(d) { return colors(d[0]); });
-
-  });
-
-  d3.json("data/world.geo.json", function(json) {
-    json.features = json.features.map(function(c) {
+    worldData.features = worldData.features.map(function(c) {
       val = 0
       theBlitzerData.filter(function(blitzerData){
         if (blitzerData.key == c.properties.iso_a2) {
@@ -124,7 +99,7 @@ function createMap() {
     ;
     countries = countriesGroup
       .selectAll("path")
-      .data(json.features)
+      .data(worldData.features)
       .enter()
       .append("path")
       .attr("d", path)
@@ -133,7 +108,7 @@ function createMap() {
       })
       .attr("class", "country")
       .style("fill", function(d, i) {
-        return (d.properties["_data"] && d.properties["_data"][field] !== null) ? colors(d.properties["_data"][field]) : '#2A2C39';
+        return (d["_data"] && d._data !== null) ? colors(d._data) : '#2A2C39';
       })
       // add an onclick action to zoom into clicked country
       .on("click", function(d, i) {
@@ -150,7 +125,35 @@ function createMap() {
               .style("top", (d3.event.pageY - 30) + "px");
     })
 
-  });
+    // x scale bar on the map
+    var tf = ".0f",
+      tsign = "",
+      drange = datadomain[1] - datadomain[0];
+    if (datadomain[0] < 0) {
+      tsign = "+";
+    }
+    if (drange <= 2.0) {
+      tf = ".2f";
+    } else if (drange < 10.0) {
+      tf = ".1f";
+    }
+
+    var xAxis = d3.axisBottom(x)
+      .tickFormat(d3.format(tsign + tf));
+
+    var xbar = svg.append("g")
+                .attr("transform", "translate(" + (width / 2 - 120) + "," + (height - 30) + ")")
+                .attr("class", "map-xbar-scale");
+
+    xbar.selectAll("rect")
+        .data(d3.pairs(x.ticks(10)))
+      .enter().append("rect")
+        .attr("height", 8)
+        .attr("x", function(d) { return x(d[0]); })
+        .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+        .style("fill", function(d) { return colors(d[0]); });
+  }
+
 }
 
 createMap()

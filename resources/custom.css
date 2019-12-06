@@ -321,3 +321,7 @@ svg rect {
   pointer-events: none;
   z-index: 200;
 }
+
+.map-xbar-scale {
+  z-index: 200;
+}
