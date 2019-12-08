@@ -1,12 +1,402 @@
 [
     {
+        "key": "NL",
+        "name": "Netherlands",
+        "value": 641
+    },
+    {
+        "key": "AT",
+        "name": "Austria",
+        "value": 621
+    },
+    {
+        "key": "ES",
+        "name": "Spain",
+        "value": 1034
+    },
+    {
+        "key": "ZA",
+        "name": "South Africa",
+        "value": 368
+    },
+    {
+        "key": "IT",
+        "name": "Italy",
+        "value": 3117
+    },
+    {
         "key": "CH",
-        "name": "Schweiz",
-        "value": 2823
+        "name": "Switzerland",
+        "value": 457
+    },
+    {
+        "key": "AU",
+        "name": "Australia",
+        "value": 1178
+    },
+    {
+        "key": "RU",
+        "name": "Russian Federation",
+        "value": 3720
     },
     {
         "key": "DE",
-        "name": "Deutschland",
-        "value": 9782
+        "name": "Germany",
+        "value": 1481
+    },
+    {
+        "key": "PL",
+        "name": "Poland",
+        "value": 277
+    },
+    {
+        "key": "CY",
+        "name": "Cyprus",
+        "value": 9
+    },
+    {
+        "key": "BE",
+        "name": "Belgium",
+        "value": 1497
+    },
+    {
+        "key": "FR",
+        "name": "France",
+        "value": 1379
+    },
+    {
+        "key": "HU",
+        "name": "Hungary",
+        "value": 81
+    },
+    {
+        "key": "GB",
+        "name": "United Kingdom",
+        "value": 6042
+    },
+    {
+        "key": "CZ",
+        "name": "Czech Republic",
+        "value": 666
+    },
+    {
+        "key": "BR",
+        "name": "Brazil",
+        "value": 6639
+    },
+    {
+        "key": "XX",
+        "name": "Unknown",
+        "value": 8
+    },
+    {
+        "key": "MD",
+        "name": "Moldova, Republic of",
+        "value": 124
+    },
+    {
+        "key": "AD",
+        "name": "Andorra",
+        "value": 21
+    },
+    {
+        "key": "TR",
+        "name": "Turkey",
+        "value": 539
+    },
+    {
+        "key": "UA",
+        "name": "Ukraine",
+        "value": 50
+    },
+    {
+        "key": "NO",
+        "name": "Norway",
+        "value": 108
+    },
+    {
+        "key": "SG",
+        "name": "Singapore",
+        "value": 227
+    },
+    {
+        "key": "LT",
+        "name": "Lithuania",
+        "value": 88
+    },
+    {
+        "key": "SK",
+        "name": "Slovakia",
+        "value": 8
+    },
+    {
+        "key": "NZ",
+        "name": "New Zealand",
+        "value": 31
+    },
+    {
+        "key": "IE",
+        "name": "Ireland",
+        "value": 6
+    },
+    {
+        "key": "LU",
+        "name": "Luxembourg",
+        "value": 2
+    },
+    {
+        "key": "SI",
+        "name": "Slovenia",
+        "value": 42
+    },
+    {
+        "key": "US",
+        "name": "United States",
+        "value": 5753
+    },
+    {
+        "key": "IS",
+        "name": "Iceland",
+        "value": 6
+    },
+    {
+        "key": "GR",
+        "name": "Greece",
+        "value": 104
+    },
+    {
+        "key": "IL",
+        "name": "Israel",
+        "value": 129
+    },
+    {
+        "key": "CA",
+        "name": "Canada",
+        "value": 758
+    },
+    {
+        "key": "BG",
+        "name": "Bulgaria",
+        "value": 155
+    },
+    {
+        "key": "KW",
+        "name": "Kuwait",
+        "value": 244
+    },
+    {
+        "key": "AR",
+        "name": "Argentina",
+        "value": 457
+    },
+    {
+        "key": "AE",
+        "name": "United Arab Emirates",
+        "value": 2022
+    },
+    {
+        "key": "JO",
+        "name": "Jordan",
+        "value": 26
+    },
+    {
+        "key": "TH",
+        "name": "Thailand",
+        "value": 54
+    },
+    {
+        "key": "TW",
+        "name": "Taiwan, Province of China",
+        "value": 553
+    },
+    {
+        "key": "RS",
+        "name": "Serbia",
+        "value": 60
+    },
+    {
+        "key": "SA",
+        "name": "Saudi Arabia",
+        "value": 239
+    },
+    {
+        "key": "FI",
+        "name": "Finland",
+        "value": 122
+    },
+    {
+        "key": "HR",
+        "name": "Croatia",
+        "value": 21
+    },
+    {
+        "key": "CL",
+        "name": "Chile",
+        "value": 185
+    },
+    {
+        "key": "MX",
+        "name": "Mexico",
+        "value": 69
+    },
+    {
+        "key": "HN",
+        "name": "Honduras",
+        "value": 123
+    },
+    {
+        "key": "UY",
+        "name": "Uruguay",
+        "value": 27
+    },
+    {
+        "key": "OM",
+        "name": "Oman",
+        "value": 532
+    },
+    {
+        "key": "IR",
+        "name": "Iran, Islamic Republic of",
+        "value": 278
+    },
+    {
+        "key": "RO",
+        "name": "Romania",
+        "value": 42
+    },
+    {
+        "key": "CN",
+        "name": "China",
+        "value": 224
+    },
+    {
+        "key": "KR",
+        "name": "Korea, Republic of",
+        "value": 5
+    },
+    {
+        "key": "MY",
+        "name": "Malaysia",
+        "value": 135
+    },
+    {
+        "key": "TT",
+        "name": "Trinidad and Tobago",
+        "value": 4
+    },
+    {
+        "key": "FJ",
+        "name": "Fiji",
+        "value": 6
+    },
+    {
+        "key": "LB",
+        "name": "Lebanon",
+        "value": 15
+    },
+    {
+        "key": "DZ",
+        "name": "Algeria",
+        "value": 113
+    },
+    {
+        "key": "KZ",
+        "name": "Kazakhstan",
+        "value": 90
+    },
+    {
+        "key": "KG",
+        "name": "Kyrgyzstan",
+        "value": 34
+    },
+    {
+        "key": "LV",
+        "name": "Latvia",
+        "value": 5
+    },
+    {
+        "key": "GE",
+        "name": "Georgia",
+        "value": 1
+    },
+    {
+        "key": "MA",
+        "name": "Morocco",
+        "value": 40
+    },
+    {
+        "key": "BH",
+        "name": "Bahrain",
+        "value": 95
+    },
+    {
+        "key": "UZ",
+        "name": "Uzbekistan",
+        "value": 2
+    },
+    {
+        "key": "BA",
+        "name": "Bosnia and Herzegovina",
+        "value": 29
+    },
+    {
+        "key": "EE",
+        "name": "Estonia",
+        "value": 2
+    },
+    {
+        "key": "QA",
+        "name": "Qatar",
+        "value": 151
+    },
+    {
+        "key": "MU",
+        "name": "Mauritius",
+        "value": 4
+    },
+    {
+        "key": "SE",
+        "name": "Sweden",
+        "value": 20
+    },
+    {
+        "key": "PT",
+        "name": "Portugal",
+        "value": 32
+    },
+    {
+        "key": "BY",
+        "name": "Belarus",
+        "value": 61
+    },
+    {
+        "key": "TN",
+        "name": "Tunisia",
+        "value": 8
+    },
+    {
+        "key": "PS",
+        "name": "Palestine, State of",
+        "value": 1
+    },
+    {
+        "key": "AM",
+        "name": "Armenia",
+        "value": 1
+    },
+    {
+        "key": "LA",
+        "name": "Lao People's Democratic Republic",
+        "value": 1
+    },
+    {
+        "key": "SM",
+        "name": "San Marino",
+        "value": 2
+    },
+    {
+        "key": "BZ",
+        "name": "Belize",
+        "value": 2
     }
 ]
