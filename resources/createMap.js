@@ -71,6 +71,7 @@ function createMap() {
 
     worldData.features = worldData.features.map(function(c) {
       val = 0
+      valPerKilometer = 0
       theBlitzerData.filter(function(blitzerData){
         if (blitzerData.key == c.properties.iso_a2) {
           return true;
@@ -78,8 +79,10 @@ function createMap() {
         return false;
       }).forEach(function(blitzerData) {
         val += blitzerData.value
+        valPerKilometer += blitzerData.value / (blitzerData.roadkilometer / 1000)
       })
       c["_data"] = val
+      c["_dataKilometer"] = Math.round(valPerKilometer * 100) / 100
       return c
     })
 
@@ -117,7 +120,8 @@ function createMap() {
               .duration(200)
               .style("opacity", 1);
         var str = "<b>" + d.properties.name + "</b><br />";
-        str += "Blitzer: " + d["_data"];
+        str += "Blitzer: " + d["_data"] + "<br />";
+        str += "Blitzer pro 1000 Kilometer: " + d["_dataKilometer"]
         tooltip.html(str)
               .style("left", (d3.event.pageX) + "px")
               .style("top", (d3.event.pageY - 30) + "px");

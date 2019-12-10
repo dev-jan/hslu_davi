@@ -145,6 +145,7 @@
             <p class="is-center">
                 <a href="https://www.scdb.info">Weltweite Blitzerdatenbank SCDB.info</a><br />
                 <a href="https://geojson-maps.ash.ms/">Weltkarte mit allen Ländern als JSON</a><br />
+                <a href="https://github.com/thewiremonkey/factbook.csv/blob/master/data/c2085.csv">Anzahl Strassenkilometer pro Land (The World Factbook der CIA)</a><br />
                 <a href="https://d3js.org/">D3.js Visualisierungsframework</a><br />
             </p>
         </div>
@@ -161,7 +162,10 @@
 
         <div class="content" id="laendervergleich">
             <h2 class="content-head is-center">Ländervergleich</h2>
-            <p class="is-center">Anzahl Blitzer pro Land</p>
+            <div class="is-center container">
+                <button id="rawBtn" class="pure-button pure-button-primary" onclick="loadDataRaw()">Anzahl Blitzer</button>
+                <button id="kiloBtn" class="pure-button" onclick="loadDataPerKilometer()">Anzahl Blitzer pro 1000 Strassenkilometer</button>
+            </div>
             <div class="pure-g">
                 <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                     <div id="comparebox"></div>
