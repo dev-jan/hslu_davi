@@ -62,7 +62,7 @@ function createMap() {
     var datadomain = d3.extent(theBlitzerData.map(function(x) { return x[field]; }));
     var colors = d3.scaleQuantize()
                     .domain(datadomain)
-                    .range(colorbrewer["RdYlGn"][9]);
+                    .range(colorbrewer["Oranges"][9]);
 
     var x = d3.scaleLinear()
                 .domain(datadomain)
