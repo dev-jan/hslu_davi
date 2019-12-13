@@ -109,7 +109,7 @@ function createMap() {
       })
       .attr("class", "country")
       .style("fill", function(d, i) {
-        return (d["_data"] && d._data !== null) ? colors(d._data) : '#2A2C39';
+        return (d["_data"] && d._data !== null) ? colors(d._data) : '#FFF';
       })
       // add an onclick action to zoom into clicked country
       .on("click", function(d, i) {
