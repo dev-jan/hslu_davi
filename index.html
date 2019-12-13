@@ -21,11 +21,11 @@
             </p>
         </div>
     </div>
-    
+
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
             <a class="pure-menu-heading" href="">DAVI Blitzer Visualisierung</a>
-    
+
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="#map" class="pure-menu-link">Map</a></li>
                 <li class="pure-menu-item"><a href="#laendervergleich" class="pure-menu-link">Ländervergleich</a></li>
@@ -65,7 +65,7 @@
                 Navigationsgerätehersteller zur Verfügung. Nachdem mehrere Formate durchprobiert wurden von uns,
                 haben wir uns für das Format von Garmin entschieden, da dies ein CSV ist, welches wir einfach
                 für unsere Zwecke benutzen konnten.
-                
+
                 Eine Zeile im Datensatz sieht dabei so aus:
                 <pre>7.25483,51.62969,"aus Richtung Recklinghausen","[51207]"</pre>
 
@@ -76,6 +76,14 @@
                 abfragt. Damit erhält man für eine GPS Koordinate diverse Informationen, unter anderem in
                 welchem Land diese Koordinate ist. Das Abfragen dauerte recht lange, da das API gedrosselt
                 ist, wenn man kein Premium User ist.
+                <br />
+                Der pure Vergleich der Anzahl Blitzer fanden wir im Laufe des Projektes nicht wirklich aussagekräftig,
+                da ja grössere Länder automatisch mehr Blitzer haben. Daher haben wir aus dem "The World Factbook"
+                der CIA pro Land noch die Anzahl Strassenkilometer pro Land zu unserem Datensatz dazugeladen. Die Daten
+                sind dabei als CSV mit dem Ländernamen und dem Wert angespeichert. Da natürlich der Ländernamen nicht immer
+                genau übereinstimmte mit unseren bisherigen Daten, haben wir ein Python Script gemacht, welches versucht, den
+                Key aufgrund des Namens zu finden. Für die Länder, welche dies nicht funktioniert hat (32 Stück), haben wir
+                das Mapping von Hand gemacht (Beispiel "Korea, Republic of" war im CIA Datensatz als "Republic of Korea" gespeichert).
             </p>
             <p class="is-center">
                 Schlussendlich haben wir noch ein weiteres Python Script erstellt, welches die Daten aggregiert
@@ -83,10 +91,11 @@
                 es ein JSON, welches die Daten in folgender Struktur enthält:
 <pre>[
     {
-        "key": "CH",
-        "name": "Switzerland",
-        "value": 457
-    }, 
+      "key": "CH",
+      "name": "Switzerland",
+      "value": 725,
+      "roadkilometer": 71464
+    },
     {...}
 ]</pre>
             </p>
@@ -127,6 +136,9 @@
                 entschieden, da es sonst sehr schwer wird, herauszufinden welches Land gemeint ist, ohne
                 die Landessprache zu kennen. Zudem gibt es in gewissen Ländern mehrere Landessprachen, was
                 ein weiteres Argument für eine einheitliche Darstellung in Englisch ist.
+                Weiter kann man beim Balkendiagram umschalten auf den Vergleich Blitzer pro 1000 Strassenkilometer.
+                Per Javascript werden dann die Werte berechnet aus der Anzahl und den gespeicherten Strassenkilometer.
+                Die Sortierung wird auch gleich angepasst, damit man auch hier ein sinvoller Vergleich machen kann.
             </p>
         </div>
 
@@ -183,6 +195,6 @@
     <script src="resources/queue.v1.min.js"></script>
     <script src="resources/createMap.js"></script>
     <script src="resources/createCompare.js"></script>
-   
+
 </body>
 </html>
